@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Plus | Juguetes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --primario: #6c63ff;
+            --secundario: #a5b4fc;
+            --fondo: #f8fafc;
+            --texto: #1f2937;
+            --verde: #22c55e;
+            --blanco: #ffffff;
+            --gris: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(90deg, var(--primario), var(--secundario));
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--blanco);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            background-color: rgba(255,255,255,0.2);
+            color: var(--blanco);
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--blanco);
+            color: var(--primario);
+        }
+
+        /* CONTENEDOR */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--primario);
+        }
+
+        /* GRID PRODUCTOS */
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .producto {
+            background-color: var(--blanco);
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .producto:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .producto h3 {
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
+
+        .precio {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--verde);
+            margin-bottom: 15px;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            background-color: var(--verde);
+            color: var(--blanco);
+            padding: 10px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .btn-comprar:hover {
+            background-color: #16a34a;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>Market Plus</h1>
+        <nav>
+            <a href="https://marketplus20000-bit.github.io/tienda-de-productos-oline/">Inicio</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h2 class="titulo-seccion">Juguetes</h2>
+
+    <div class="productos">
+
+        <div class="producto">
+            <h3>Juguete Infantil</h3>
+            <div class="precio">$200 MXN</div>
+            <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+
+        <div class="producto">
+            <h3>Figura de Acción</h3>
+            <div class="precio">$200 MXN</div>
+            <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+
+        <div class="producto">
+            <h3>Juguete Educativo</h3>
+            <div class="precio">$200 MXN</div>
+            <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+
+        <div class="producto">
+            <h3>Juego Didáctico</h3>
+            <div class="precio">$200 MXN</div>
+            <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2025 Market Plus · Todos los derechos reservados
+</footer>
+
+</body>
+</html>
