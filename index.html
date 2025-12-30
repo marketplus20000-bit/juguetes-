@@ -1,195 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Market Plus | Juguetes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Market Plus | Juguetes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --primario: #6366f1;
-            --secundario: #a5b4fc;
-            --fondo: #f9fafb;
-            --texto: #1f2937;
-            --verde: #22c55e;
-            --blanco: #ffffff;
-            --gris: #e5e7eb;
-            --badge: #fde68a;
-        }
+<style>
+:root{
+    --primario:#6366f1;
+    --secundario:#22c55e;
+    --fondo:#f1f5f9;
+    --card:#ffffff;
+    --texto:#1f2937;
+    --menudeo:#16a34a;
+    --mayoreo:#2563eb;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+*{box-sizing:border-box}
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: var(--fondo);
-            color: var(--texto);
-        }
+body{
+    margin:0;
+    font-family:'Segoe UI',Arial,sans-serif;
+    background:linear-gradient(180deg,#eef2ff,#f8fafc);
+    color:var(--texto);
+}
 
-        /* HEADER */
-        header {
-            background: linear-gradient(90deg, var(--primario), var(--secundario));
-            padding: 20px;
-        }
+/* HEADER */
+header{
+    background:linear-gradient(90deg,var(--primario),#a5b4fc);
+    padding:20px;
+}
 
-        .header-content {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+.header-content{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
 
-        header h1 {
-            margin: 0;
-            color: var(--blanco);
-            font-size: 30px;
-        }
+header h1{
+    color:white;
+    margin:0;
+    font-size:30px;
+}
 
-        nav {
-            display: flex;
-            gap: 15px;
-        }
+nav{
+    display:flex;
+    gap:15px;
+}
 
-        nav a {
-            text-decoration: none;
-            background-color: rgba(255,255,255,0.25);
-            color: var(--blanco);
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-size: 14px;
-            transition: 0.2s;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    background:rgba(255,255,255,0.25);
+    padding:10px 18px;
+    border-radius:20px;
+    font-weight:500;
+}
 
-        nav a:hover {
-            background-color: var(--blanco);
-            color: var(--primario);
-        }
+nav a:hover{
+    background:white;
+    color:var(--primario);
+}
 
-        /* CONTENEDOR */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 15px;
-        }
+/* CONTENEDOR */
+.container{
+    max-width:1100px;
+    margin:40px auto;
+    padding:0 15px;
+}
 
-        .titulo-seccion {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 35px;
-            color: var(--primario);
-        }
+.titulo-seccion{
+    text-align:center;
+    font-size:30px;
+    color:var(--primario);
+    margin-bottom:35px;
+}
 
-        /* GRID */
-        .productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
-        }
+/* GRID */
+.productos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
 
-        .producto {
-            background-color: var(--blanco);
-            border-radius: 18px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-            transition: transform 0.2s;
-            position: relative;
-        }
+.producto{
+    background:var(--card);
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
 
-        .producto:hover {
-            transform: translateY(-6px);
-        }
+/* IMAGEN */
+.producto img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:14px;
+    cursor:pointer;
+    transition:transform .2s;
+}
 
-        /* BADGE */
-        .badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: var(--badge);
-            padding: 5px 10px;
-            font-size: 12px;
-            border-radius: 12px;
-            font-weight: bold;
-        }
+.producto img:hover{
+    transform:scale(1.05);
+}
 
-        /* IMAGEN */
-        .producto img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 15px;
-        }
+.producto h3{
+    margin:15px 0 5px;
+}
 
-        .producto h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
+.precio{
+    font-weight:bold;
+    margin-bottom:15px;
+}
 
-        /* BOTÓN */
-        .btn-comprar {
-            display: inline-block;
-            margin-top: 10px;
-            background-color: var(--verde);
-            color: var(--blanco);
-            padding: 12px 22px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            transition: background 0.2s, transform 0.2s;
-        }
+/* BOTONES */
+.botones{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+}
 
-        .btn-comprar:hover {
-            background-color: #16a34a;
-            transform: scale(1.05);
-        }
+.btn{
+    flex:1;
+    text-decoration:none;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:600;
+}
 
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #6b7280;
-        }
-    </style>
+.btn-menudeo{
+    background:var(--menudeo);
+}
+
+.btn-menudeo:hover{
+    background:#15803d;
+}
+
+.btn-mayoreo{
+    background:var(--mayoreo);
+}
+
+.btn-mayoreo:hover{
+    background:#1e40af;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:15px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+footer{
+    margin-top:60px;
+    text-align:center;
+    padding:20px;
+    color:#64748b;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <div class="header-content">
-        <h1>Market Plus</h1>
-        <nav>
-            <a href="https://marketplus20000-bit.github.io/tienda-de-productos-oline/">Inicio</a>
-            <a href="#">Contacto</a>
-        </nav>
-    </div>
+<div class="header-content">
+    <h1>Market Plus</h1>
+    <nav>
+        <a href="https://marketplus20000-bit.github.io/tienda-de-productos-oline/">Inicio</a>
+        <a href="#">Contacto</a>
+    </nav>
+</div>
 </header>
 
 <div class="container">
-    <h2 class="titulo-seccion">Juguetes</h2>
+<h2 class="titulo-seccion">Juguetes</h2>
 
-    <div class="productos">
+<div class="productos">
 
-        <div class="producto">
-            <span class="badge">Menudeo / Mayoreo</span>
-            <img src="https://i.ibb.co/yBp3k2yN/Whats-App-Image-2025-12-28-at-12-31-36-PM.jpg" alt="Juguete">
-            <h3>Juguete Infantil</h3>
-            <a href="https://buy.stripe.com/test_14A5kDdRR5Kxbkrf559bO00" class="btn-comprar" target="_blank">
-                Comprar ahora
-            </a>
-        </div>
+<div class="producto">
+<img src="https://i.ibb.co/yBp3k2yN/Whats-App-Image-2025-12-28-at-12-31-36-PM.jpg" onclick="abrirModal(this.src)">
+<h3>Juguete Infantil</h3>
+<div class="precio">Menudeo / Mayoreo</div>
+<div class="botones">
+<a class="btn btn-menudeo" href="https://buy.stripe.com/test_14A5kDdRR5Kxbkrf559bO00" target="_blank">Menudeo</a>
+<a class="btn btn-mayoreo" href="https://buy.stripe.com/test_28EfZhbJJeh3gEL0ab9bO01" target="_blank">Mayoreo</a>
+</div>
+</div>
 
-    </div>
+</div>
+</div>
+
+<div class="modal" id="modal" onclick="cerrarModal()">
+<img id="modalImg">
 </div>
 
 <footer>
-    © 2025 Market Plus · Todos los derechos reservados
+© 2025 Market Plus · Todos los derechos reservados
 </footer>
+
+<script>
+function abrirModal(src){
+    document.getElementById("modalImg").src = src;
+    document.getElementById("modal").classList.add("active");
+}
+function cerrarModal(){
+    document.getElementById("modal").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
